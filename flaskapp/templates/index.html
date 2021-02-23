@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>HillBlog | Home</title>
+</head>
+<body>
+<div class="background">
+<div class="all">
+        <nav>
+        <div class="logo"><h2>HillBlog</h2></div>
+        <div class="openMenu"><h4 class="fa fa-bars"></h4></div>
+        <ul class="mainMenu">
+        <li><a  href="#">Our Story</a></li>
+        <li><a href="#">Membership</a></li>
+        <li><a method="" href="/login">Sign In</a></li>
+        <li><a method="post" href="/signup">Create Account</a></li>
+        <div class="closeMenu"><i class="fa fa-times"></i></div>
+        <span class="icons">
+            <a href="https://web.facebook.com/abdulwahab.ozil.1/" ><span class="iconify" style="font-size:30px;" data-icon="ion-social-facebook" data-inline="false"></span></a>
+            <a href="https://www.instagram.com/wah.760/" ><span class="iconify" style="font-size:30px;" data-icon="ion-social-instagram" data-inline="false"></span></a>
+            <a href="https://github.com/WahabDev12" ><span class="iconify" style="font-size:30px;" data-icon="ion-social-github" data-inline="false"></span></a>                   
+            <a href="https://twitter.com/NerdyProgramme2" ><span class="iconify" style="font-size:30px;" data-icon="ion-social-twitter" data-inline="false"></span></a>
+
+
+        </span>
+        </ul>
+        </nav>
+        </div>
+        <div class="text-1">  
+        <h1 class="text">Where good ideas</h1>
+        <h1>find you.</h1>
+        <small>Read and share perspectives on just about any topic. Everyone's welcome.</small>
+        <br>
+        <br>
+        <a href="/signup" method=post>GET STARTED</a>
+        </div>
+        </div>
+        <h2 class="discover">Discover More</h2>
+        <div class="container">
+            <div class="row">   
+        <div data-aos="flip-left" class="col-12 col-lg-4 first">
+        <div class="person">
+        <div class="personimg">
+        <img src="{{ url_for('static', filename='img1.jpg') }}" alt="">
+        </div>
+        <div class="persondetail">
+        <p class="personunvan">Make a Blog Post</p>
+        <p class="persontitle">Writing a blog is a little like driving: nothing can prepare to be creative
+            than having your own blog.
+        </p>
+        </div>
+        <div class="personcontact">
+        <p class="personemail"><i class="fas fa-envelope-open-text"></i></p>
+        <p class="persontelefon"><i class="fas fa-phone-square-alt"></i></p>
+        <p class="personCV">
+        <a href="/signup" method=post class="btn" style="color:white;background:rgb(19, 18, 18)" src="">Learn More</a>
+        </p>
+        </div>
+        </div>
+        </div>
+        <div data-aos="fade-right" class="col-12 col-lg-4 mobilmt">
+        <div class="person">
+        <div class="personimg">
+            <img src="{{ url_for('static', filename='img2.jpg') }}" alt="">
+        </div>
+        <div class="persondetail">
+            <p class="personunvan">Share with Friends</p>
+            <p class="persontitle">Share with family and friends. Make a blog post to share
+                everything new you have learnt.
+            </p>
+        </div>
+        <div class="personcontact">
+            <p class="personemail"><i class="fas fa-envelope-open-text"></i> </p>
+            <p class="persontelefon"><i class="fas fa-phone-square-alt"></i></p>
+            <p class="personCV">
+                <a href="/signup" method=post class="btn" style="color:white;background:black" src="">Learn More</a>
+            </p>
+        </div>
+        </div>
+        </div>
+        <div class="col-12 col-lg-4 mobilmt"  data-aos="flip-right">
+        <div class="person">
+        <div class="personimg">
+            <img src="{{url_for('static', filename='img3.jpg')}}" alt="">
+        </div>
+        <div class="persondetail">
+            <p class="personunvan">Latest News</p>
+            <p class="persontitle">Get the latest international news, features and analysis from Africa
+                and all over the world.
+            </p>
+        </div>
+        <div class="personcontact">
+            <p class="personemail"><i class="fas fa-envelope-open-text"></i> </p>
+            <p class="persontelefon"><i class="fas fa-phone-square-alt"></i> </p>
+            <p class="personCV">
+                <a href="/signup" method=post style="color:white;background:black" class="btn" src="">Learn More</a>
+            </p>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <br>
+        <div class="section" style="height:100rempx" >
+            <div class="left">
+                <h3>WHAT WE DO HERE</h3>
+                <br>
+                <small>HillBlog is a regularly updated blog site,
+                    where an individual can
+                    write in an informal or conversational style.
+                    Where great ideas find you. Create a new account and login to
+                    make your blog post and find answers to some questions. 
+                    Honestly, I dont know what am fucking writing just wanted to 
+                    write some shit stuff here so that I can go to sleep.
+                    Follow and subscribe to our Newsletter.
+        
+                 </small>
+            </div>
+            
+            <div class="right">
+                <h3>FOLLOW US</h3>
+                <br>
+                <span class="icons-2">
+                    <a href="https://web.facebook.com/abdulwahab.ozil.1/" ><span class="iconify" style="font-size:30px;" data-icon="ion-social-facebook" data-inline="false"></span></a>
+                    <a href="https://www.instagram.com/wah.760/" ><span class="iconify" style="font-size:30px;" data-icon="ion-social-instagram" data-inline="false"></span></a>
+                    <a href="https://github.com/WahabDev12" ><span class="iconify" style="font-size:30px;" data-icon="ion-social-github" data-inline="false"></span></a>                   
+                    <a href="https://twitter.com/NerdyProgramme2" ><span class="iconify" style="font-size:30px;" data-icon="ion-social-twitter" data-inline="false"></span></a>
+        
+                </span>
+                <br>
+                <h3 style="color:white;">Subscribe to our Newsletter</h3>
+                <br>
+                <div style="display:flex">
+                    <input style="border:none;" type="email"></input>
+                <button id="subs" onclick="displayMsg()">SUBSCRIBE</button>
+                </div>
+                <h6 style="padding:20px 20px;" class="text-success" id="msg"></h6>
+            </div>
+        
+            </div>
+        
+            <h4 class="footer">Copyright &copy; Abdul Wahab</h4>            
+<script defer src="{{ url_for('static', filename='main.js') }}"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://use.fontawesome.com/faa35b4f3b.js"></script>
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>

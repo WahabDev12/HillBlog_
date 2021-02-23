@@ -1,0 +1,40 @@
+body{
+    background: linear-gradient(to right, #292b2c
+    , #2d502d);
+}
+
+#container{
+    margin:auto;
+    width:500px;
+    height:390px;
+    border-radius:5px;
+}
+
+#form{
+    width:450px;
+    padding:10px;
+}
+
+#content-section{
+    height:120px;
+}
+
+.buttons{
+    display:flex;
+    justify-content: space-around;
+}
+
+#btn{
+    width:100px;
+    font-weight:200;
+    font-size:15px;
+}
+
+@media (max-width:610px){
+    #form{
+        width:320px;
+    }
+#container{
+    width:350px;
+}    
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='update.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Update Post</title>
+</head>
+<body class="text-light">
+    <br>
+    <br>
+    <br>
+    <div id="container" class="bg-white text-dark container" >
+        <br>
+        <h2 class="text-center">Edit Your Post</h2>
+        <br>
+    <form method="post" id="form" action="/update/{{post.id}}">
+        <input class="form-control" type="text" name="title" value="{{post.title}}">
+        <br>
+        <textarea id="content-section" class="form-control" value="{{post.content}}" name="content"></textarea>
+        <br>
+        <div class="buttons">
+        <button id="btn" class="btn-success form-control" type="submit" >Save</button>
+        <a href="/dashboard" method=post><button id="btn" class="btn-danger form-control" type="submit" >Cancel</button></a>
+    </div>
+    </form>
+</div>
+</body>
+</html>

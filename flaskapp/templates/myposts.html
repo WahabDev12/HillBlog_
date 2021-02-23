@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='myposts.css')}}">
+  <script defer src="{{url_for('static', filename='myposts.js')}}"></script>
+  <title>My Post | Edit, Delete, Update</title>
+</head>
+<body id="body">
+  <header>
+    <div class="burger">
+      <h2 style="color:white;font-size:2rem;" class="fa fa-bars"></h2>
+    </div>
+    <strong>MyPosts</strong>
+    <h1><i class="fa fa-search"></i></h1>
+  </header>
+  <nav>.
+    <ul>
+      <br>
+      <br>
+      <div class="profile-pic-div">
+        <img src="{{url_for('static', filename='image.jpg')}}" id="photo">
+        <input type="file" id="file">
+        <label for="file" id="uploadBtn">Choose Photo</label>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <li><a class="" href="#">Profile</a></li>
+      <br>
+      <br>
+      <li><a class="" href="#" style="width:200px;">Sports</a></li>
+      <br>
+      <br>
+      <li><a class="" href="#">News</a></li>
+      <br>
+      <br>
+      <li><a class="" action="post" href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+<br>
+  <dialog class="modal">
+  <h2>Edit Blog Post</h2>
+  <form enctype=multipart/form-data method="POST" action="/posts" autocomplete="off">
+    <input name="title" class="title"  type="text" placeholder="Title"/>
+    <br>
+    <textarea name="content" placeholder="Content"></textarea>
+    <br>
+    <div class="buttons">
+      <div class="upload-btn-wrapper">
+        <button  class="btn">Change Image</button>
+        <input  name="pic" type="file" id="file2"/>
+      </div>
+      <button class="close-modal">Save</button>
+    </div>
+    <h6 id="msg"></h6>
+  </form>
+  </div>
+  </dialog>
+  <div class="post-container">
+    <div class="user">
+    <img class="min-pic" id="user" src="{{url_for('static', filename='image.jpg')}}">
+    <small>{{post.author}}
+      <small class="date">Posted on {{post.date_posted.strftime('%d/%m/%Y')}}</small>
+    </small>  
+    
+  </div>
+  <h2>{{post.title}}</h2> 
+  <img style="display:none" src="{{url_for('static',filename=image_name)}}" id="photo2">
+  <h4>{{post.content}}<span id="dots">...</span><span id="more"></span>
+      <button id="myBtn" onclick = "myFunction(this)"></button>
+  </h4>
+  <br>
+  <div class="icons">
+    <a style="color:#0275d8;font-size:1.18rem;text-decoration: none;" id="edit-button" href="/update/{{post.id}}"><i class="fa fa-edit"> </i> Edit</a>
+    <a style="color:#d9534f;text-decoration:none;" id="delete-button" href="/delete/{{post.id}}"><i class="fa fa-trash"></i> Delete</a>
+    <a style="color:#f0ad4e";class="share"><i class="fa fa-exclamation-triangle"></i> Report</a>
+  </div>  
+  </div>
+   <div class="" style="height:400px;"></div>
+  <script src="https://use.fontawesome.com/faa35b4f3b.js"></script>
+</body>
+</html>

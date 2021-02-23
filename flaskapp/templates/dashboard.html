@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='dashboard.css')}}">
+  <script defer src="{{url_for('static', filename='dashboard.js')}}"></script>
+  <title>Dashboard | NewsFeed</title>
+</head>
+<body id="body">
+  <header>
+    <div class="burger">
+      <h2 style="color:white;font-size:2rem;" class="fa fa-bars"></h2>
+    </div>
+    <strong>NewsFeed</strong>
+    <h1 id="search-button"><i class="fa fa-search"></i></h1>
+  </header>
+  <nav>
+    <ul>
+      <br>
+      <br>
+      <div class="profile-pic-div">
+        <img src="{{url_for('static', filename='image.jpg')}}" id="photo">
+        <input type="file" id="file">
+        <label for="file" id="uploadBtn">Choose Photo</label>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <li><a class="" href="#">Profile</a></li>
+      <br>
+      <br>
+      <li><a class="" method="post" href="https://www.skysports.com/" style="width:200px;">Sports</a></li>
+      <br>
+      <br>
+      <li><a class="" href="https://edition.cnn.com/">News</a></li>
+      <br>
+      <br>
+      <li><a class="" action="post" href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+  <div class="modal-case">
+  <input  type="text" placeholder="What's on your mind?" class="open-modal"></input>
+</div>
+<br>
+  <dialog class="modal">
+    <form class="close-button"  method="dialog">
+    <button><i class="fa fa-times"></i></button>
+  </form>
+  <h2>Create a Blog Post</h2>
+  <form enctype=multipart/form-data method="POST" action="/posts" autocomplete="off">
+    <input name="title" class="title" required autofocus type="text" placeholder="Title"/>
+    <br>
+    <textarea name="content" required autofocus placeholder="Content"></textarea>
+    <br>
+    <div class="buttons">
+      <div class="upload-btn-wrapper">
+        <button disabled class="btn">Upload Image</button>
+        <input disabled  name="pic" type="file" id="file2"/>
+      </div>
+      <button class="close-modal">Post</button>
+    </div>
+    <h6 id="msg"></h6>
+  </form>
+  </div>
+  </dialog>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages%}
+  <div style="width:350px;margin:auto">
+  <h5 class="alert">{{message}}</h5>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %} 
+  <div class="post-container">
+    <div class="user">
+    <img class="min-pic" id="user" src="{{url_for('static', filename='myProfile.jpg')}}">
+    <small>Abdul Wahab
+      <small class="date">Posted on 04/1/2021</small>
+    </small>
+    
+  </div>
+ <h2><a class="post-title">Welcome to my not so nice blog</a></h2>
+  <img src="{{url_for('static', filename='welcome.jpg')}}" id="default-post">
+  <h4>
+    Thank you and welcome once again to the blog. This is a side project I have been working on to enhance my skills in Web Dev specifically with the Python framework named Flask.<span id="dots">...</span><span id="more"> Some features of this application are still in development and therefore do not work/work properly So it's safe to say that this is kinda like a beta version of the application. The alpha version would be released soon. Psyche !!!.. Am never touching this again.
+    The upload Image button does not work properly so dont bother tapping on it. I have disabled it for the meantime since am working on making it better.If you've really read this thank you for your time. Please feel free and check it out,any feeback/criticism is most welcomed. 有り難う</span> <button onclick = "myFunction()" id="myBtn">Read more</button>
+  </h4>
+  <br>
+  <div class="icons">
+    <a style="font-size:1.18rem;" id="like-button"><i onclick="myFunction2(this)" class="fa fa-thumbs-up"> </i> Like</a>
+    <a class=""><i class="fa fa-comment"></i> Comment</a>
+    <a class="share"><i class="fa fa-share"></i> Share</a>
+  </div>  
+  </div>
+</div>
+  {% for post in posts %}
+  <div class="post-container">
+    <div class="user">
+    <img class="min-pic" id="user" src="{{url_for('static', filename='image.jpg')}}">
+    <small>{{post.author}}
+      <small class="date">Posted on {{post.date_posted.strftime('%d/%m/%Y')}}</small>
+    </small>  
+    
+  </div>
+<h2> <a class="post-title" href="{{url_for('posts_blueprint.my_post',post_id = post.id)}}">{{post.title}}</a></h2>
+  <img style="display:none;"src="{{url_for('static', filename='')}}" id="photo2">
+  <h4>{{post.content}}</h4>
+  <br>
+  <div class="icons">
+    <a style="font-size:1.18rem;" id="like-button"><i onclick="myFunction2(this)" class="fa fa-thumbs-up"> </i> Like</a>
+    <a class="" id="comment-button"><i class="fa fa-comment"></i> Comment</a>
+    <a class="share"><i class="fa fa-share"></i> Share</a>
+  </div>  
+  </div>
+  {% endfor %}  
+  <div class="post-container">
+    <div class="user">
+    <img class="min-pic" id="user" src="{{url_for('static', filename='myProfile.jpg')}}">
+    <small>Abdul Wahab
+      <small class="date">Posted on 19/12/2020</small>
+    </small>
+    
+  </div>
+ <h2><a class="post-title">Why you should learn Python as a beginner</a></h2>
+  <img src="{{url_for('static', filename='python image.jpg')}}" id="default-post">
+  <h4>
+    Python, compared to other languages like Java or C++ has a very beginner friendly syntax making it easier for first time coders to adapt.
+    Also Python is widely used in many software engineering fields like Artificial Intelligence and Machine Learning, Data Science, Automation and many more.
+  </h4>
+  <br>
+  <div class="icons">
+    <a style="font-size:1.18rem;" id="like-button"><i onclick="myFunction2(this)" class="fa fa-thumbs-up"> </i> Like</a>
+    <a class=""><i class="fa fa-comment"></i> Comment</a>
+    <a class="share"><i class="fa fa-share"></i> Share</a>
+  </div>  
+  </div>
+</div>
+<div style="height:220px"></div>
+  <script src="https://use.fontawesome.com/faa35b4f3b.js"></script>
+</body>
+</html>
